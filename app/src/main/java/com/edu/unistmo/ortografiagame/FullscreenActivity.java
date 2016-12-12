@@ -1,12 +1,16 @@
 package com.edu.unistmo.ortografiagame;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -82,7 +86,8 @@ public class FullscreenActivity extends AppCompatActivity {
             return false;
         }
     };
-
+    TextView lblpuntuacion;
+    Button btncat,btnsalir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,18 +99,39 @@ public class FullscreenActivity extends AppCompatActivity {
         mContentView = findViewById(R.id.fullscreen_content);
 
 
-        // Set up the user interaction to manually show or hide the system UI.
-//        mContentView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //toggle();
-//            }
-//        });
+        Typeface fontdog = Typeface.createFromAsset(getAssets(), "god.TTF");
 
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        int ac=getIntent().getIntExtra("Aciertos",0);
+
+        ac*=500;
+
+        lblpuntuacion= (TextView) findViewById(R.id.txtPuntuacion);
+        btncat= (Button) findViewById(R.id.btnJugarNuevo);
+        btnsalir= (Button) findViewById(R.id.buttonSalirPunt);
+
+        lblpuntuacion.setTypeface(fontdog);
+        btncat.setTypeface(fontdog);
+        btnsalir.setTypeface(fontdog);
+
+        btncat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(FullscreenActivity.this,Categories.class));
+            }
+        });
+        btnsalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FullscreenActivity.this.finish();
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+
+        lblpuntuacion.setText("Tu Puntuacion es : "+ac);
         if (AUTO_HIDE) {
             delayedHide(AUTO_HIDE_DELAY_MILLIS);
         }

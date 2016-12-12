@@ -1,0 +1,153 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img78"
+    tools:context="com.edu.unistmo.ortografiagame.GameSinAnt">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/fullscreen_content_game_ant_sin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                app:srcCompat="@color/brown"
+                android:id="@+id/imageView6"
+                android:background="@color/brown"
+                android:layout_height="10dp"
+                android:layout_width="95dp"
+                android:layout_alignTop="@+id/imageView7"
+                android:layout_alignParentEnd="true" />
+
+            <ImageView
+                app:srcCompat="@color/brown"
+                android:id="@+id/imageView7"
+                android:background="@color/brown"
+                android:layout_height="10dp"
+                android:layout_width="95dp"
+                android:layout_alignTop="@+id/lblQuestion"
+                android:layout_alignEnd="@+id/imageView5"
+                android:layout_marginTop="109dp" />
+
+            <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="73dp"
+                android:id="@+id/btn1Answ"
+                style="@style/buttonforGame"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" />
+
+            <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn2Answ"
+                style="@style/buttonforGame"
+                android:layout_above="@+id/btn1Answ"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" />
+
+            <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn3Answ"
+                style="@style/buttonforGame"
+                android:layout_below="@+id/btn2Answ"
+                android:layout_alignParentEnd="true"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblQuestion"
+                style="@style/txtforGame"
+                android:textSize="36sp"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:padding="15dp"
+                android:layout_marginBottom="20dp"
+                android:layout_above="@+id/btn2Answ"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:text="Sinonimos"
+                android:layout_width="match_parent"
+                android:id="@+id/lblTypeGame"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/imageView7"
+                android:layout_height="140dp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:text="Siguiente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtnext"
+                android:layout_above="@+id/btnext"
+                android:layout_alignEnd="@+id/btnext" />
+
+            <ImageView
+                app:srcCompat="@color/brown"
+                android:id="@+id/imageView4"
+                android:layout_width="10dp"
+                android:background="@color/brown"
+                android:layout_height="60dp"
+                android:layout_marginEnd="12dp"
+                android:layout_alignBottom="@+id/imageView3"
+                android:layout_toStartOf="@+id/txtnext" />
+
+            <ImageView
+                app:srcCompat="@color/brown"
+                android:id="@+id/imageView5"
+                android:layout_width="10dp"
+                android:background="@color/brown"
+                android:layout_marginEnd="41dp"
+                android:layout_marginBottom="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@+id/btn2Answ"
+                android:layout_height="60dp" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnext"
+                android:background="@drawable/btnrigh"
+                android:layout_above="@+id/btn3Answ"
+                android:layout_alignParentEnd="true" />
+
+            <ImageView
+                app:srcCompat="@color/brown"
+                android:id="@+id/imageView3"
+                android:layout_width="10dp"
+                android:background="@color/brown"
+                android:layout_height="125dp"
+                android:layout_alignBottom="@+id/imageView5"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</FrameLayout>

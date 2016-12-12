@@ -2,9 +2,82 @@
     <string name="app_name">OrtografiaGame</string>
     <string name="action_settings">Settings</string>
 
-    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="title_activity_fullscreen">Menu</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
-    <string name="title_activity_main_fullscreen">MainActivityFullscreen</string>
+    <string name="title_activity_main_fullscreen">Ortografía</string>
+    <string name="title_activity_categories">categorias</string>
+
+    <string name="title_activity_game_sin_ant">GameSinAnt</string>
+
+    <string-array name="palabras_sinonimo">
+        <item>Bonito</item>
+        <item>Cálido</item>
+        <item>Frío</item>
+        <item>Gordo</item>
+        <item>Beso</item>
+        <item>Regalo</item>
+    </string-array>
+    <string-array name="sinonimos">
+        <item>Hermoso</item>
+        <item>Caliente</item>
+        <item>Gélido</item>
+        <item>Obseo</item>
+        <item>Ósculo</item>
+        <item>Dádiva</item>
+    </string-array>
+
+    <string-array name="palabras_Antonimo">
+        <item>Bonito</item>
+        <item>Cálido</item>
+        <item>Gordo</item>
+        <item>Valentia</item>
+        <item>Paciente</item>
+        <item>Pobreza</item>
+    </string-array>
+    <string-array name="antonimo">
+        <item>Feo</item>
+        <item>Frío</item>
+        <item>Delgado</item>
+        <item>Corbarde</item>
+        <item>Intolerable</item>
+        <item>Riqueza</item>
+    </string-array>
+
+    <string-array name="palabras_acentos">
+    <item>Tapón</item>
+    <item>Rectángulo</item>
+        <item>Difícilmente</item>
+        <item>Árbol</item>
+        <item>Pantalón</item>
+        <item>Mártir</item>
+    </string-array>
+
+    <string-array name="type_acentos">
+    <item>Aguda</item>
+        <item>Esdrújula</item>
+        <item>Sobreesdrújula</item>
+        <item>grave</item>
+        <item>aguda</item>
+        <item>grave</item>
+    </string-array>
+
+    <string-array name="palabras">
+        <item>alcándara</item>
+        <item>ámago</item>
+        <item>idiosincrasia</item>
+        <item>uxoricidio</item>
+        <item>cordaje</item>
+        <item>macrospora</item>
+    </string-array>
+    <string-array name="Significado">
+        <item>Percha o varal donde se ponían las aves de cetrería o donde se colgaba la ropa.</item>
+        <item>Fastidio, náusea.</item>
+        <item>Rasgos, temperamento, carácter, etc., distintivos y propios de un individuo o de una colectividad.</item>
+        <item>Muerte causada a la mujer por su marido.</item>
+        <item>Jarcia de una embarcación.</item>
+        <item>Espora femenina de ciertos helechos.</item>
+    </string-array>
+
 </resources>

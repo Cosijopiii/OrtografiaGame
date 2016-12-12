@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.unistmo.geographygame.Categories$PlaceholderFragment"
+    android:id="@+id/bakcLayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTitle"
+        android:textSize="46sp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed"
+        android:text="ESCOJA ALGUNA CATEGORIA"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTitle"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:text="TEst"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtType"
+            android:background="@drawable/btnopccate"
+            android:textSize="44sp"
+            android:paddingTop="10dp"
+            android:textColor="@android:color/background_light"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/txtTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="Frio / Calor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtExampleCat"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:textSize="45sp"
+            android:textColor="@android:color/background_dark"
+            android:textAlignment="center"
+            android:background="@drawable/fondoexample"
+            android:layout_above="@+id/btnGO"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-10dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:text="Jugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGO"
+        android:onClick="test"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:elevation="8dp"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-condensed"
+        android:background="@drawable/btnblue"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

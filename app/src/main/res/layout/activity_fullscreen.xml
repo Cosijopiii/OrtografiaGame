@@ -11,15 +11,46 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fullscreen_content">
+        android:id="@+id/fullscreen_content"
+        android:background="@drawable/img73">
 
-        <Button
-            android:text="Button"
+        <TextView
+            android:text="puntuacion es"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/button2" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="78dp"
+            android:id="@+id/txtPuntuacion"
+            android:textSize="60sp"
+            android:textAlignment="center" />
+
+        <Button
+            android:text="salir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonSalirPunt"
+            android:background="@drawable/btnorange"
+            android:textSize="24sp"
+            android:textColor="@android:color/background_light"
+            android:elevation="6dp"
+            android:layout_marginTop="45dp"
+            android:layout_below="@+id/btnJugarNuevo"
+            android:layout_alignEnd="@+id/btnJugarNuevo" />
+
+        <Button
+            android:text="Jugar de nuevo"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnJugarNuevo"
+            android:background="@drawable/btnblue"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="24sp"
+            android:textColor="@android:color/background_light"
+            android:layout_marginLeft="53dp"
+            android:layout_marginTop="91dp"
+            android:layout_below="@+id/txtPuntuacion"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
     <!-- This FrameLayout insets its children based on system windows using

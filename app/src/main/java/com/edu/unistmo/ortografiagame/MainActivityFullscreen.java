@@ -1,12 +1,21 @@
 package com.edu.unistmo.ortografiagame;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.Typeface;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -23,7 +32,7 @@ public class MainActivityFullscreen extends AppCompatActivity {
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
      * user interaction before hiding the system UI.
      */
-    private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
+    private static final int AUTO_HIDE_DELAY_MILLIS = 300;
 
     /**
      * Some older devices needs a small delay between UI widget updates
@@ -84,6 +93,30 @@ public class MainActivityFullscreen extends AppCompatActivity {
     };
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        runOnUiThread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                ((AnimationDrawable) imgAnim.getBackground()).start();
+            }
+        });
+
+        if (AUTO_HIDE) {
+            delayedHide(AUTO_HIDE_DELAY_MILLIS);
+        }
+
+    }
+
+    ImageView enterImage;
+    FrameLayout frameAnim;
+    FrameLayout frameButton;
+    Button buttonEmpezar;
+    Button btnSalir;
+    ImageView imgAnim;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -94,21 +127,78 @@ public class MainActivityFullscreen extends AppCompatActivity {
         mContentView = findViewById(R.id.fullscreen_content_main);
 
 
-        // Set up the user interaction to manually show or hide the system UI.
-//        mContentView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //toggle();
-//            }
-//        });
+        buttonEmpezar = (Button) findViewById(R.id.btnEmpezar);
+        btnSalir= (Button) findViewById(R.id.btnSalir);
+        imgAnim= (ImageView) findViewById(R.id.imgvAnim);
 
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+
+        buttonEmpezar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(MainActivityFullscreen.this,Categories.class);
+                Log.d("d",frameButton.getWidth()+" ."+frameButton.getHeight());
+                startActivity(i);
+
+            }
+        });
+        btnSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                MainActivityFullscreen.this.finish();
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+            }
+        });
+
         if (AUTO_HIDE) {
             delayedHide(AUTO_HIDE_DELAY_MILLIS);
         }
+        settingFonts();
+        settingsmenu();
+
+
+    }
+
+    private void settingFonts(){
+        Typeface font = Typeface.createFromAsset(this.getAssets(), "god.TTF");
+        buttonEmpezar.setTypeface(font);
+        btnSalir.setTypeface(font);
+
+    }
+
+
+
+    private void settingsmenu() {
+        enterImage= (ImageView) findViewById(R.id.imageView);
+        frameAnim= (FrameLayout) findViewById(R.id.frame_animation);
+        frameButton= (FrameLayout) findViewById(R.id.frame_menu);
+        Animation animation= AnimationUtils.loadAnimation(this,R.anim.enter_image);
+        enterImage.setAnimation(animation);
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                frameButton.setVisibility(View.VISIBLE);
+                frameButton.startAnimation(AnimationUtils.loadAnimation(MainActivityFullscreen.this,R.anim.enter_main));
+                frameAnim.setVisibility(View.INVISIBLE);
+
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
     }
 
     @Override

@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,29 +14,88 @@
         android:layout_height="match_parent"
         android:id="@+id/fullscreen_content_main">
 
-        <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/button" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frame_animation"
+            android:visibility="visible">
 
-        <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/button3" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <Button
-            android:text="Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/button4" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/logo_unistmo"
+                    android:id="@+id/imageView"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frame_menu"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:elevation="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/frame"
+                    android:id="@+id/imgvAnim"
+                    android:scaleType="center"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:adjustViewBounds="true"
+                    android:layout_alignParentStart="true" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    app:srcCompat="@drawable/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_below="@+id/space"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="60dp" />
+
+                <Button
+                    android:text="salir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSalir"
+                    android:background="@drawable/btnorange"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/background_light"
+                    android:elevation="6dp"
+                    android:layout_below="@+id/imageView2"
+                    android:layout_alignEnd="@+id/btnEmpezar"
+                    android:layout_marginTop="66dp" />
+
+                <Button
+                    android:text="Empezar"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnEmpezar"
+                    android:background="@drawable/btnblue"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/background_light"
+                    android:layout_alignBottom="@+id/btnSalir"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="82dp" />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
     </RelativeLayout>
 
     <!-- This FrameLayout insets its children based on system windows using
